@@ -14,6 +14,7 @@ import ExportRoleUser from '../../../app/service/roleUser';
 import ExportTest from '../../../app/service/Test';
 import ExportUser from '../../../app/service/user';
 import ExportInterfaceIndex from '../../../app/service/interface/index';
+import ExportToolsUerTool from '../../../app/service/tools/uerTool';
 
 declare module 'egg' {
   interface IService {
@@ -26,6 +27,9 @@ declare module 'egg' {
     user: AutoInstanceType<typeof ExportUser>;
     interface: {
       index: AutoInstanceType<typeof ExportInterfaceIndex>;
+    }
+    tools: {
+      uerTool: AutoInstanceType<typeof ExportToolsUerTool>;
     }
   }
 }

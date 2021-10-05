@@ -10,6 +10,26 @@ const plugin: EggPlugin = {
     enable: true,
     package: 'egg-mysql',
   },
+  cors: {
+    enable: true,
+    package: 'egg-cors',
+  },
+  redis:{
+    enable:true,
+    package:'egg-redis',
+  },
+  validate: {
+    enable: true,
+    package: 'egg-validate',
+  },
+  jwt: {
+    enable: true,
+    package: 'egg-jwt',
+  },
+  mailer: {
+    enable: true,
+    package: 'egg-mailer',
+  },
 };
 
 export default plugin;

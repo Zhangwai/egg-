@@ -1,9 +1,8 @@
 import { Controller } from 'egg';
-import { v4 } from 'uuid';
 
 export default class BaseController extends Controller {
     entity: string;
-    success(data: string | []) {
+    success(data: string | any[] | {}) {
         this.ctx.body = {
             code: 0,
             data,
@@ -37,7 +36,6 @@ export default class BaseController extends Controller {
         const { ctx, service } = this;
         //默认接受x-www-form-urlencoded格式和json格式
         let entity = ctx.request.body;
-        entity.uuid = v4();
         const res = await service[this.entity].create(entity);
         res ? this.success('success') : this.error('创建失败');
     }

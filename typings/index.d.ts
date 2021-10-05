@@ -2,6 +2,7 @@ import 'egg';
 
 declare module 'egg' {
     interface Application {
-        mysql: any
+        mysql: any,
+        redis:any
     }
 }

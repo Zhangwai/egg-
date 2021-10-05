@@ -15,6 +15,11 @@ import 'egg-static';
 import 'egg-jsonp';
 import 'egg-view';
 import 'egg-mysql';
+import 'egg-cors';
+import 'egg-redis';
+import 'egg-validate';
+import 'egg-jwt';
+import 'egg-mailer';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
   interface EggPlugin {
@@ -31,5 +36,10 @@ declare module 'egg' {
     jsonp?: EggPluginItem;
     view?: EggPluginItem;
     mysql?: EggPluginItem;
+    cors?: EggPluginItem;
+    redis?: EggPluginItem;
+    validate?: EggPluginItem;
+    jwt?: EggPluginItem;
+    mailer?: EggPluginItem;
   }
 }

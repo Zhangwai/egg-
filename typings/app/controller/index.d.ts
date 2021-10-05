@@ -9,6 +9,7 @@ import ExportRole from '../../../app/controller/role';
 import ExportRoleResource from '../../../app/controller/roleResource';
 import ExportRoleUser from '../../../app/controller/roleUser';
 import ExportUser from '../../../app/controller/user';
+import ExportVerificationCodes from '../../../app/controller/verificationCodes';
 
 declare module 'egg' {
   interface IController {
@@ -19,5 +20,6 @@ declare module 'egg' {
     roleResource: ExportRoleResource;
     roleUser: ExportRoleUser;
     user: ExportUser;
+    verificationCodes: ExportVerificationCodes;
   }
 }

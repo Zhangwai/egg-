@@ -1,5 +1,6 @@
 import { Service } from 'egg';
 import { createUser } from './interface'
+import { v4 } from 'uuid';
 /**
  * User Service
  */
@@ -26,6 +27,7 @@ export default class BaseService extends Service {
     }
     public async create(payload: createUser) {
         const { app } = this;
+        payload.uuid = v4();
         const res = await app.mysql.insert(this.entity, payload);
         return res.affectedRows > 0;
     }
@@ -37,7 +39,5 @@ export default class BaseService extends Service {
     public async destory(id: number) {
         const { app } = this;
         return app.mysql.delete(this.entity, { id })
-
-
     }
 }

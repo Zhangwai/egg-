@@ -5,6 +5,8 @@ export default () => {
     csrf: {
       enable: false,
     },
+    //跨域白名单
+    domainWhiteList: ["http://localhost:8008"],
   };
   //add mysql
   config.mysql = {
@@ -25,6 +27,15 @@ export default () => {
     app: true,
     // 是否加载到 agent 上，默认关闭
     agent: false,
+  };
+  //add redis
+  config.redis = {
+    client: {
+      port: 6379,
+      host: '127.0.0.1',
+      password: "123",
+      db: 0
+    }
   }
   return {
     ...config
